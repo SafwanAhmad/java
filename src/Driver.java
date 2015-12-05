@@ -1,3 +1,4 @@
+import javax.swing.text.Position;
 import java.io.*;
 
 /**
@@ -15,8 +16,26 @@ public class Driver {
         //Add second child
         BinaryTree right = new BinaryTree(2);
 
+        BinaryTree leftLeft = new BinaryTree(3);
+        BinaryTree leftRight = new BinaryTree(4);
+
+        BinaryTree rightLeft = new BinaryTree(5);
+        BinaryTree rightRight = new BinaryTree(6);
+
         root.setLeft(left);
         root.setRight(right);
+
+        left.setLeft(leftLeft);
+        left.setRight(leftRight);
+
+        right.setLeft(rightLeft);
+        right.setRight(rightRight);
+
+        traverse(root);
+        root.serialize("obj.txt");
+
+        BinaryTree newTree = BinaryTree.deSerialize("obj.txt");
+        traverse(newTree);
 
     }
 
