@@ -1,3 +1,5 @@
+import java.io.*;
+
 /**
  * Created by safwanx on 11/28/15.
  */
@@ -15,5 +17,18 @@ public class Driver {
 
         root.setLeft(left);
         root.setRight(right);
+
     }
+
+    public static void traverse(BinaryTree obj)
+    {
+        if(obj != null)
+        {
+            System.out.print(obj.toString() + " ");
+            traverse(obj.getLeft());
+            traverse(obj.getRight());
+        }
+    }
+
+
 }
