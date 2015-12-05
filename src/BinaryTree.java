@@ -75,7 +75,7 @@ public class BinaryTree <T> implements Serializable {
         }
     }
 
-    public BinaryTree deSerialize(String fileName)
+    public static BinaryTree deSerialize(String fileName)
     {
         //Deserialize tree
         BinaryTree dObj =  null;
